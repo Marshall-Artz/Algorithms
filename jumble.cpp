@@ -23,6 +23,7 @@ string removeLetters(string word, int wordTotal, string totalLetters)
         removeWord += removeWord;
     }
 
+    // I was/am working on making it a bit faster
     if (wordTotal > 0) {
         for (int i = 0; i < removedTotalLetters.size(); i++) {
             for (int j = 0; j < removeWord.size(); j++) {
