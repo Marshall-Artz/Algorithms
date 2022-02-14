@@ -33,6 +33,8 @@ string removeLetters(string word, int wordTotal, string totalLetters)
                     break;
                 }
             }
+            if (removeWord.size() == 0) // Check if the word to remove has been cleared and if so, exit
+                break;
         }
     }
 
