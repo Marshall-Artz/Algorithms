@@ -23,29 +23,18 @@ string removeLetters(string word, int wordTotal, string totalLetters)
         removeWord += removeWord;
     }
 
-    // I was/am working on making it a bit faster
+    // Big O(n^2), but it's still pretty fast since it compares to each character for removal before iterating
     if (wordTotal > 0) {
         for (int i = 0; i < removedTotalLetters.size(); i++) {
             for (int j = 0; j < removeWord.size(); j++) {
                 if (removedTotalLetters[i] == removeWord[j]) {
                     removedTotalLetters.erase(i, 1);
+                    removeWord.erase(j, 1);
                     break;
                 }
             }
         }
     }
-
-    // // Big O(n^2) ... could be optimized
-    // if (wordTotal > 0) {
-    //     for (int i = 0; i < removeWord.size(); i++) {
-    //         for (int j = 0; j < removedTotalLetters.size(); j++) {
-    //             if (removedTotalLetters[j] == removeWord[i]) {
-    //                 removedTotalLetters.erase(j, 1);
-    //                 break;
-    //             }
-    //         }
-    //     }
-    // }
 
     return removedTotalLetters;
 }
